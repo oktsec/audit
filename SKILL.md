@@ -1,20 +1,46 @@
 ---
 name: audit
 description: >
-  Use when user says "review my code", "is this secure", "security check",
-  "audit my project", "check for vulnerabilities", "I built this with AI",
-  "is this safe to deploy", or asks about OWASP, secrets in code, or security
-  best practices. Also trigger when user mentions deploying to production for
-  the first time.
+  Security audit for AI-built code. Runs 130+ checks across OWASP Top 10, auto-detects
+  your stack, and produces a graded report (A-F) with exact code fixes. Covers secrets,
+  injection, auth, database access control, AI/LLM security, payments, and infrastructure.
 metadata:
   author: oktsec
   version: 3.0.0
   license: Apache-2.0
 ---
 
-# Audit
+# `/audit` - Security audit for AI-built code
 
-Security review for code built with AI. Auto-detects the stack, loads only the relevant checks, produces a graded report with exact fixes.
+Run `/audit` in any project to get a graded security report (A-F) with exact fixes. 130+ checks across OWASP Top 10.
+
+Built for code written with Claude Code, Cursor, Copilot, Windsurf, and other AI coding tools.
+
+```
+npx skills add oktsec/audit
+```
+
+## When to use this skill
+
+- You want to review your code for security issues ("is this secure?", "security check", "audit my project")
+- You built something with AI and want to check for vulnerabilities before deploying
+- You need to verify OWASP Top 10 compliance
+- You want to find hardcoded secrets, injection vulnerabilities, or auth misconfigurations
+- You are deploying to production for the first time and want a security review
+
+## What it catches
+
+Hardcoded API keys (16 providers), SQL injection, XSS, command injection, SSRF, path traversal, weak password hashing, JWT misconfigurations, missing rate limiting, CORS wildcards, Supabase RLS gaps, Firebase rule misconfigurations, Stripe webhook verification, prompt injection, Docker misconfigurations, and more.
+
+## How it works
+
+Detects your stack automatically, loads only the relevant checks (Next.js checks only run if Next.js is detected), scans with 130+ patterns, then produces a graded report with before/after code for every finding. Optionally fixes issues one by one.
+
+## Supported stacks
+
+Next.js, Express, Fastify, Django, Flask, FastAPI, Gin, Rails, Laravel, Prisma, Supabase, Firebase, Clerk, Stripe, OpenAI, Anthropic, Docker, and 30+ more.
+
+---
 
 No questions. No setup. Read the project and review it.
 
