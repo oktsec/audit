@@ -2,7 +2,7 @@
 
 Run `/audit` in any project. Get a graded security report with exact fixes in under 2 minutes.
 
-Built for code written with Claude Code, Cursor, Copilot, Windsurf, and other AI coding tools. Covers OWASP Top 10 with 130+ detection patterns across 16 security categories.
+Built for code written with Claude Code, Cursor, Copilot, Windsurf, and other AI coding tools. Covers OWASP Top 10 with 130+ detection patterns across 19 security categories.
 
 ```bash
 npx skills add oktsec/audit
